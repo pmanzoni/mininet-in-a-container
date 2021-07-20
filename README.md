@@ -4,12 +4,6 @@ The Docker image for [Mininet](http://mininet.org/).
 
 Based on this: https://github.com/iwaseyusuke/docker-mininet, basically with the addition of wireshark already installed.
 
-## Docker Pull Command
-
-```bash
-docker pull pmanzoni/mininet-in-a-container
-```
-
 ## Docker Run Command
 
 ```bash
