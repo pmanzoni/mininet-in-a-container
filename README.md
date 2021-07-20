@@ -1,13 +1,13 @@
-# docker-mininet
+# Mininet in a container
 
-The Docker image for [Mininet](http://mininet.org/)
+The Docker image for [Mininet](http://mininet.org/). 
+
+Based on this: https://github.com/iwaseyusuke/docker-mininet, basically with the addition of wireshark already installed.
 
 ## Docker Pull Command
 
-Download from [Docker Hub](https://hub.docker.com/)
-
 ```bash
-docker pull iwaseyusuke/mininet
+docker pull pmanzoni/mininet-in-a-container
 ```
 
 ## Docker Run Command
@@ -16,22 +16,11 @@ docker pull iwaseyusuke/mininet
 docker run -it --rm --privileged -e DISPLAY \
              -v /tmp/.X11-unix:/tmp/.X11-unix \
              -v /lib/modules:/lib/modules \
-             iwaseyusuke/mininet
+             pmanzoni/mininet-in-a-container
 ```
 
-## Docker Compose
 
-If you have installed [Docker Compose](https://docs.docker.com/compose/),
-you can run container with:
-
-```bash
-wget https://github.com/iwaseyusuke/docker-mininet/raw/master/docker-compose.yml
-docker-compose run --rm mininet
-```
-
-## TIPS
-
-### Open X Window applications in containers
+## Open X Window applications in containers
 
 If you could not open `xterm` or other X Window applications, or faced to the
 following error message;
@@ -46,10 +35,9 @@ program as a non-root user or by removing the suid bit on the executable.
 xterm: Xt error: Can't open display: %s
 ```
 
-Please add `root` user to the local access control list of xhost on your
+Please add docker user to the local access control list of xhost on your
 "Docker host" (not on your containers).
 
 ```bash
-$ xhost +si:localuser:root
-localuser:root being added to access control list
+$ xhost +local:*
 ```
