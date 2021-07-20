@@ -1,8 +1,8 @@
 # Mininet in a container
 
-The Docker image for [Mininet](http://mininet.org/). 
+A Docker image for [Mininet](http://mininet.org/). 
 
-Based on this: https://github.com/iwaseyusuke/docker-mininet, basically with the addition of wireshark already installed.
+It is based on this: https://github.com/iwaseyusuke/docker-mininet, basically with the addition of wireshark already installed in the image.
 
 ## Docker Run Command
 
