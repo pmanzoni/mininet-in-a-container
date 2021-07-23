@@ -5,6 +5,8 @@ WORKDIR /root
 
 COPY ENTRYPOINT.sh /
 
+COPY .Xresources /root/
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     iproute2 \

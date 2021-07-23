@@ -3,7 +3,7 @@ services:
   mininet:
     build:
       context: .
-    image: iwaseyusuke/mininet
+    image: pmanzoni/mininet-in-a-container 
     tty: true
     network_mode: "bridge"
     privileged: true

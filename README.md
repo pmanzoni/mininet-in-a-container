@@ -16,7 +16,7 @@ $ docker run -it --rm --privileged -e DISPLAY \
 
 ## Open X Window applications in containers
 
-If you could not open `xterm` or other X Window applications, add docker user to the local access control list of xhost on your
+If you cannot not open `xterm` or other X Window applications, add docker user to the local access control list of xhost on your
 "Docker host" (not on your containers).
 
 ```bash
