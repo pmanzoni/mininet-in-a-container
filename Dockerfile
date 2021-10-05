@@ -21,12 +21,14 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xterm \
     wireshark-qt \
     wget \
-    python-tk \
-    git \
  && rm -rf /var/lib/apt/lists/* \
  && chmod +x /ENTRYPOINT.sh
 
-RUN xrdb ./.Xresources
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python-tk
+
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    git
 
 RUN git clone git://github.com/mininet/mininet
 
