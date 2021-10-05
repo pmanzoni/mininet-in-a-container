@@ -22,8 +22,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     wireshark-qt \
     wget \
     python-tk \
+    git \
  && rm -rf /var/lib/apt/lists/* \
  && chmod +x /ENTRYPOINT.sh
+
+RUN xrdb ./.Xresources
+
+RUN git clone git://github.com/mininet/mininet
 
 EXPOSE 6633 6653 6640
 
