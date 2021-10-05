@@ -32,6 +32,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN git clone git://github.com/mininet/mininet
 
+RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller
+
 EXPOSE 6633 6653 6640
 
 ENTRYPOINT ["/ENTRYPOINT.sh"]
