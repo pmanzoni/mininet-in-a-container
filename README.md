@@ -1,16 +1,18 @@
 # Mininet in a container
 
-A Docker image for [Mininet](http://mininet.org/).
+A Docker image for [Mininet](http://mininet.org/), based on this one: https://github.com/iwaseyusuke/docker-mininet.
 
-It is based on this: https://github.com/iwaseyusuke/docker-mininet, basically with the addition in the image of:
+I created it for these two Lab. session in one of my courses:
+* https://hackmd.io/@rse2021/lab1
+* https://hackmd.io/@rse2021/lab2
 
+It basically adds this elements:
 * wireshark-qt
 * wget
 * python-tk (for miniedit.py)
 * git
 
 and the download of the Mininet source code:
-
 * git clone git://github.com/mininet/mininet
 
 ## Docker Run Command
