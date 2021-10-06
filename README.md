@@ -3,8 +3,8 @@
 A Docker image for [Mininet](http://mininet.org/), based on this one: https://github.com/iwaseyusuke/docker-mininet.
 
 I created it for these two Lab. session in one of my courses:
-* https://hackmd.io/@rse2021/lab1
-* https://hackmd.io/@rse2021/lab2
+* [Lab 1 - Mininet - Introduction to Mininet](https://hackmd.io/@rse2021/lab1)
+* [Lab 2 - Mininet - SDN with Mininet](https://hackmd.io/@rse2021/lab2)
 
 It basically adds this elements:
 * wireshark-qt
