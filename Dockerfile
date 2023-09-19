@@ -27,10 +27,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python-tk
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    git
-
-RUN git clone git://github.com/mininet/mininet
+RUN apt-get update && \
+    apt-get install -y git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
 
 RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller
 
