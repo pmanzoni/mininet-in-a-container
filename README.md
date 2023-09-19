@@ -24,6 +24,17 @@ $ docker run -it --rm --privileged -e DISPLAY \
              pmanzoni/mininet-in-a-container
 ```
 
+## Docker Run Command (in MacOS)
+
+Launch [XQuartz](https://www.xquartz.org) (install it before...); under the XQuartz Preferences menu go to the security tab and ensure "Allow connections from network clients" is checked.
+
+```bash
+$ docker run -it --rm --privileged -e DISPLAY \
+      --env="DISPLAY=host.docker.internal:0" \
+      -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+      -v /lib/modules:/lib/modules \
+      pmanzoni/mininet-in-a-container
+```
 
 ## Open X Window applications in containers
 
