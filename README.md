@@ -23,7 +23,7 @@ $ docker build -t mininet-in-a-container .
 ## Using the prebuilt image "pmanzoni/mininet-in-a-container"
 
 
-### Use this command
+### Use this command:
 ```bash
 $ docker run -it --rm --privileged -e DISPLAY \
              -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -32,9 +32,6 @@ $ docker run -it --rm --privileged -e DISPLAY \
 ```
 
 ### For MacOS: 
-
-Launch [XQuartz](https://www.xquartz.org) (install it before...); under the XQuartz Preferences menu go to the security tab and ensure "Allow connections from network clients" is checked.
-
 ```bash
 $ docker run -it --rm --privileged -e DISPLAY \
       --env="DISPLAY=host.docker.internal:0" \
@@ -54,3 +51,6 @@ If you cannot not open `xterm` or other X Window applications, add docker user t
 ```bash
 $ xhost +local:*
 ```
+
+For MacOS launch [XQuartz](https://www.xquartz.org) (install it before... easier with [Brew](https://brew.sh/)); under the XQuartz Preferences menu go to the security tab and ensure "Allow connections from network clients" is checked.
+
