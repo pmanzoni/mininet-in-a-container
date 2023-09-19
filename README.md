@@ -2,10 +2,6 @@
 
 A Docker image for [Mininet](http://mininet.org/), based on this one: https://github.com/iwaseyusuke/docker-mininet.
 
-I use it for these two laboratory sessions of one of my courses:
-* [Lab 1 - Mininet - Introduction to Mininet](https://hackmd.io/@rse2021/lab1)
-* [Lab 2 - Mininet - SDN with Mininet](https://hackmd.io/@rse2021/lab2)
-
 It basically adds these elements:
 * wireshark-qt
 * wget
