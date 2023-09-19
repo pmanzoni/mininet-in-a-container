@@ -11,8 +11,19 @@ It basically adds these elements:
 and the download of the Mininet source code:
 * git clone git://github.com/mininet/mininet
 
-## Docker Run Command
 
+## Docker *build* Command
+To build the image locally you can use:
+
+```bash
+$ docker build -t mininet-in-a-container . 
+```
+
+
+## Using the prebuilt image "pmanzoni/mininet-in-a-container"
+
+
+### Use this command
 ```bash
 $ docker run -it --rm --privileged -e DISPLAY \
              -v /tmp/.X11-unix:/tmp/.X11-unix \
@@ -20,7 +31,7 @@ $ docker run -it --rm --privileged -e DISPLAY \
              pmanzoni/mininet-in-a-container
 ```
 
-## Docker Run Command (in MacOS)
+### For MacOS: 
 
 Launch [XQuartz](https://www.xquartz.org) (install it before...); under the XQuartz Preferences menu go to the security tab and ensure "Allow connections from network clients" is checked.
 
@@ -31,6 +42,9 @@ $ docker run -it --rm --privileged -e DISPLAY \
       -v /lib/modules:/lib/modules \
       pmanzoni/mininet-in-a-container
 ```
+
+
+
 
 ## Open X Window applications in containers
 
