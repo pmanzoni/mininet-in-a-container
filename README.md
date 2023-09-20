@@ -9,7 +9,7 @@ It basically adds these elements:
 * git
 
 and the download of the Mininet source code:
-* git clone git://github.com/mininet/mininet
+* git://github.com/mininet/mininet
 
 
 ## Docker *build* Command
@@ -19,8 +19,28 @@ To build the image locally you can use:
 docker build -t mininet-in-a-container . 
 ```
 
+### run command for a Unix machine:
+```bash
+docker run -it --rm --privileged -e DISPLAY \
+             -v /tmp/.X11-unix:/tmp/.X11-unix \
+             -v /lib/modules:/lib/modules \
+             mininet-in-a-container
+```
+
+### run command for MacOS: 
+```bash
+docker run -it --rm --privileged -e DISPLAY \
+      --env="DISPLAY=host.docker.internal:0" \
+      -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+      -v /lib/modules:/lib/modules \
+      mininet-in-a-container
+```
+
+
+
 
 ## Using the prebuilt image "pmanzoni/mininet-in-a-container"
+Be careful. It was built on a M2-based machine!!!
 
 
 ### Use this command:
@@ -40,17 +60,4 @@ docker run -it --rm --privileged -e DISPLAY \
       pmanzoni/mininet-in-a-container
 ```
 
-
-
-
-## Open X Window applications in containers
-
-If you cannot not open `xterm` or other X Window applications, add docker user to the local access control list of xhost on your
-"Docker host" (not on your containers).
-
-```bash
-xhost +local:*
-```
-
-For MacOS launch [XQuartz](https://www.xquartz.org) (install it before... easier with [Brew](https://brew.sh/)); under the XQuartz Preferences menu go to the security tab and ensure "Allow connections from network clients" is checked.
 
