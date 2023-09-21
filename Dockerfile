@@ -7,6 +7,9 @@ COPY ENTRYPOINT.sh /
 
 COPY .Xresources /root/
 
+RUN apt-get update && apt-get install -y --no-install-recommends python-tk
+RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     curl \
     iproute2 \
@@ -24,11 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists/* \
  && chmod +x /ENTRYPOINT.sh
 
-RUN apt-get update && apt-get install -y python-tk
-
-RUN apt-get update && apt-get install -y ca-certificates
 RUN apt-get update && apt-get install -y --no-install-recommends git
-
 RUN git clone https://github.com/mininet/mininet.git
 
 RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller
