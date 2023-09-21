@@ -26,6 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN apt-get update && apt-get install -y --no-install-recommends python-tk
 
+RUN apt-get update && apt-get install -y ca-certificates
 RUN apt-get update && apt-get install -y --no-install-recommends git
 
 RUN git clone https://github.com/mininet/mininet.git
