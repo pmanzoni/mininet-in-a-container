@@ -24,13 +24,9 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
  && rm -rf /var/lib/apt/lists/* \
  && chmod +x /ENTRYPOINT.sh
 
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    python-tk
+RUN apt-get update && apt-get install -y --no-install-recommends python-tk
 
-RUN apt-get update && \
-    apt-get install -y git && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y --no-install-recommends git
 
 RUN git clone https://github.com/mininet/mininet.git
 
