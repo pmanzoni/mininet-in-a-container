@@ -32,7 +32,7 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN git clone https://github.com/pmanzoni/mininet-in-a-container.git
+RUN git clone https://github.com/mininet/mininet.git
 
 RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller
 
