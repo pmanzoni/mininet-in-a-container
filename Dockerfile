@@ -32,6 +32,8 @@ RUN apt-get update && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+RUN git clone https://github.com/pmanzoni/mininet-in-a-container.git
+
 RUN ln /usr/bin/ovs-testcontroller /usr/bin/controller
 
 EXPOSE 6633 6653 6640
