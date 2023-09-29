@@ -2,6 +2,8 @@
 
 A Docker image for [Mininet](http://mininet.org/), based on this one: https://github.com/iwaseyusuke/docker-mininet.
 
+It works in Linux-based systems (e.g., Ubuntu native or virtual via VirtualBox); it also works with MacOS.
+
 It basically adds these elements:
 * wireshark-qt
 * wget
@@ -9,7 +11,7 @@ It basically adds these elements:
 * git
 
 and the download of the Mininet source code:
-* git://github.com/mininet/mininet
+* https://github.com/mininet/mininet
 
 
 ## Docker *build* Command
@@ -27,7 +29,7 @@ docker run -it --rm --privileged -e DISPLAY \
              --name mininet mininet-in-a-container
 ```
 
-### run command for MacOS and Windows: 
+### run command for MacOS: 
 ```bash
 docker run -it --rm --privileged -e DISPLAY \
       --env="DISPLAY=host.docker.internal:0" \
