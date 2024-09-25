@@ -42,24 +42,33 @@ docker run -it --rm --privileged -e DISPLAY \
 
 
 ## Using the prebuilt image "pmanzoni/mininet-in-a-container"
-Be careful. It was built on a M2-based machine!!!
 
+### **run command for a Unix machine:**
 
-### Use this command:
 ```bash
 docker run -it --rm --privileged -e DISPLAY \
-      -v /tmp/.X11-unix:/tmp/.X11-unix \
-      -v /lib/modules:/lib/modules \
-      --name mininet mininet-in-a-container
+             -v /tmp/.X11-unix:/tmp/.X11-unix \
+             -v /lib/modules:/lib/modules \
+             --name mininet pmanzoni/mininet-in-a-container:amd64
 ```
 
-### For MacOS: 
+### **run command for MacOS (CPU Intel):**
+
 ```bash
 docker run -it --rm --privileged -e DISPLAY \
       --env="DISPLAY=host.docker.internal:0" \
       -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
       -v /lib/modules:/lib/modules \
-      --name mininet mininet-in-a-container
+      --name mininet pmanzoni/mininet-in-a-container:amd64
 ```
 
+### **run command for MacOS (CPU M1/M2/M3…):**
+
+```bash
+docker run -it --rm --privileged -e DISPLAY \
+      --env="DISPLAY=host.docker.internal:0" \
+      -v /tmp/.X11-unix:/tmp/.X11-unix:rw \
+      -v /lib/modules:/lib/modules \
+      --name mininet pmanzoni/mininet-in-a-container:arm64
+```
 
